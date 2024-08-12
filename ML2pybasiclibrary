@@ -1,0 +1,25 @@
+import pandas as pd
+import statistics as stat
+import numpy as np
+import math
+
+df = pd.read_csv("Dataset/Student_Performance2.csv")
+df.sample(7)
+
+print("Mean: ", df["Sleep Hours"].mean())
+print("Median: ", df["Sleep Hours"].median())
+print("Mode: ", df["Sleep Hours"].mode())
+print("Variance: ", df["Sleep Hours"].var())
+print("Standard Deviation: ", df["Sleep Hours"].std())
+
+print("Mean: ", df["Hours Studied"].mean())
+print("Median: ", df["Hours Studied"].median())
+print("Mode: ", df["Hours Studied"].mode())
+print("Variance: ", df["Hours Studied"].var())
+print("Standard Deviation: ", df["Hours Studied"].std())
+
+print("Mean: ", df["Previous Scores"].mean())
+print("Median: ", df["Previous Scores"].median())
+print("Mode: ", df["Previous Scores"].mode())
+print("Variance: ", df["Previous Scores"].var())
+print("Standard Deviation: ", df["Previous Scores"].std())
