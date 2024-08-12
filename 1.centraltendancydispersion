@@ -1,0 +1,37 @@
+import pandas as pd
+import statistics as stat
+import numpy as np
+import math
+
+df = pd.read_csv("Dataset/iris.csv")
+df.sample(7)
+
+def calculate_mode(series):
+mode_value = series.mode()
+if len(mode_value) > 0:
+return mode_value[0]
+else:
+return None
+
+mean = df.groupby(["Species"])["SepalLengthCm"].mean()
+median = df.groupby(["Species"])["SepalLengthCm"].median()
+mode = df.groupby("Species")["SepalLengthCm"].apply(calculate_mode)
+var = df.groupby(["Species"])["SepalLengthCm"].var()
+std = df.groupby(["Species"])["SepalLengthCm"].std()
+print(f"Central tendencies of Sepal length")
+print("Mean")
+print(mean)
+print("\n")
+print("Median")
+print(median)
+print("\n")
+print("Mode")
+print(mode)
+print("\n")
+
+print(f"Measure of dispersion of Sepal length")
+print("Variance")
+print(var)
+print("\n")
+print("Standard deviation")
+print(std)
